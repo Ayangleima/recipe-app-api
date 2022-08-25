@@ -66,7 +66,6 @@ class PublicUserApiTests(TestCase):
         ).exists()
         self.assertFalse(user_exists)
 
-
     def test_create_token_for_user(self):
         """Test generates token for valid credentials."""
         user_details = {
@@ -110,7 +109,6 @@ class PublicUserApiTests(TestCase):
 
         self.assertNotIn('token', res.data)
         self.assertEqual(res.status_code, status.HTTP_400_BAD_REQUEST)
-
 
     def test_retrieve_user_unauthorized(self):
         """Test authentication is required for users."""
